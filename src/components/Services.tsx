@@ -1,21 +1,4 @@
-const services = [
-  {
-    name: "Corte Clásico",
-    price: "$300"
-  },
-  {
-    name: "Fade Premium",
-    price: "$500"
-  },
-  {
-    name: "Barba",
-    price: "$250"
-  },
-  {
-    name: "Corte + Barba",
-    price: "$700"
-  }
-];
+import { business } from '../data/business';
 
 export default function Services() {
   return (
@@ -24,7 +7,7 @@ export default function Services() {
       <h2>Servicios</h2>
 
       <div className="services-grid">
-        {services.map((service) => (
+        {business.services.map((service) => (
           <div className="card" key={service.name}>
             <h3>{service.name}</h3>
             <p>{service.price}</p>
