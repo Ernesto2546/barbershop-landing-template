@@ -1,17 +1,4 @@
-const reviews = [
-  {
-    name: "Carlos M.",
-    text: "Excelente servicio y ambiente."
-  },
-  {
-    name: "Juan P.",
-    text: "Los mejores fades de la zona."
-  },
-  {
-    name: "Miguel R.",
-    text: "Atención rápida y profesional."
-  }
-];
+import { business } from '../data/business';
 
 export default function Testimonials() {
   return (
@@ -21,7 +8,7 @@ export default function Testimonials() {
 
       <div className="reviews">
 
-        {reviews.map((review) => (
+        {business.reviews.map((review) => (
           <div className="review" key={review.name}>
             <p>"{review.text}"</p>
             <h4>{review.name}</h4>

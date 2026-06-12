@@ -1,10 +1,6 @@
-export default function Gallery() {
-  const images = [
-    "https://images.unsplash.com/photo-1621605815971-fbc98d665033",
-    "https://images.unsplash.com/photo-1622286342621-4bd786c2447c",
-    "https://images.unsplash.com/photo-1517832606299-7ae9b720a186"
-  ];
+import { business } from '../data/business';
 
+export default function Gallery() {
   return (
     <section id="gallery">
 
@@ -12,7 +8,7 @@ export default function Gallery() {
 
       <div className="gallery-grid">
 
-        {images.map((img) => (
+        {business.gallery.map((img) => (
           <img
             key={img}
             src={img}

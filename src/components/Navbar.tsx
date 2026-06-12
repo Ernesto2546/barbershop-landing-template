@@ -1,21 +1,41 @@
+import { useState } from 'react';
+import { business } from '../data/business';
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+  const whatsappLink = `https://wa.me/${business.whatsapp}`;
+
   return (
     <nav className="navbar">
-      <div className="logo">BARBER PRO</div>
+      <button className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <ul>
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#gallery">Galería</a></li>
-        <li><a href="#testimonials">Opiniones</a></li>
-        <li><a href="#contact">Contacto</a></li>
+      <a href="#hero" className="logo">{business.name}</a>
+
+      <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+        <li><a href="#services" onClick={closeMenu}>Servicios</a></li>
+        <li><a href="#gallery" onClick={closeMenu}>Galería</a></li>
+        <li><a href="#testimonials" onClick={closeMenu}>Opiniones</a></li>
+        <li><a href="#contact" onClick={closeMenu}>Contacto</a></li>
+        <li>
+          <a
+            href={whatsappLink}
+            target="_blank"
+            onClick={closeMenu}
+            className="reserve-link"
+          >
+            <button className="reserve-btn">Reservar</button>
+          </a>
+        </li>
       </ul>
-
-      <a
-        href="https://wa.me/18090000000"
-        target="_blank"
-      >
-        <button>Reservar</button>
-      </a>
     </nav>
   );
 }
