@@ -4,6 +4,10 @@ A premium and modern landing page template designed specifically for barber shop
 
 This project helps barbers establish a strong online presence, showcase their services, display their best work, and connect directly with customers through WhatsApp.
 
+## 🚀 Demo
+
+🌐 https://barbershop-landing-template.vercel.app/
+
 ## ✨ Features
 
 * Fully Responsive Design
